@@ -1,5 +1,18 @@
+
+# TIC TAC TOE GAME
+
 from sys import exit
 from numpy import array
+
+def fun(t):
+    if t == 1:
+        return 'X', 'O'
+    elif t == 0:
+        return 'O', 'X'
+    else:
+        print(' INVALID CHOICE,GAME OVER ')
+        exit(0)
+
 
 def func(v):
 
@@ -14,15 +27,15 @@ def disparray():
     print('{}  |  {}  |  {}     {}  |  {}  |  {}'.format(a[1][0], a[1][1], a[1][2], v10, v11, v12))
     print('{}  |  {}  |  {}     {}  |  {}  |  {}'.format(a[2][0], a[2][1], a[2][2], v20, v21, v22))
 
-def win(d,p):
+def win(m, n):
 
-    if p == 1:
-        if d == 'X':
+    if n == 1:
+        if m == 'X':
             print(' PLAYER 1 WINS ')
         else:
             print(' PLAYER 2 WINS ')
     else:
-        if d == 'O':
+        if m == 'O':
             print(' PLAYER 1 WINS ')
         else:
             print(' PLAYER 2 WINS ')
@@ -38,17 +51,11 @@ a = array([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 disparray()
 
 print('\n')
-y = ''
+#y = ''
 print(' SYMBOLS : X AND O ')
 p = int(input(' PLAYER 1 : PLZ SELECT YOUR SYMBOL \n PRESS 1 TO SELECT SYMBOL X \n PRESS 0 TO SELECT SYMBOL O \n'))
 
-if p == 1:
-    x, y = 'X', 'O'
-elif p == 0:
-    x, y= 'O', 'X'
-else:
-    print(' INVALID CHOICE,GAME OVER ')
-    exit(0)
+x, y = fun(p)
 
 print(' SYMBOL FOR PLAYER 1 :  ', x)
 print(' SYMBOL FOR PLAYER 2 :  ', y)
@@ -132,57 +139,57 @@ while flag:
     disparray()
     print('\n')
 
-    j+=1
+    j += 1
 
     if p == 1:
         d = 'X'
-        for k in [0,1]:
+        for k in [0, 1]:
             if a[0][0] == d and a[0][1] == d and a[0][2] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[0][0] == d and a[1][0] == d and a[2][0] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[2][0] == d and a[2][1] == d and a[2][2] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[0][2] == d and a[1][2] == d and a[2][2] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[1][0] == d and a[1][1] == d and a[1][2] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[0][1] == d and a[1][1] == d and a[2][1] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[0][0] == d and a[1][1] == d and a[2][2] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             elif a[2][0] == d and a[1][1] == d and a[0][2] == d:
                 flag = False
                 winStatus = True
-                win('X',1)
+                win('X', 1)
                 break
 
             else:
@@ -194,49 +201,49 @@ while flag:
             if a[0][0] == d and a[0][1] == d and a[0][2] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[0][0] == d and a[1][0] == d and a[2][0] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[2][0] == d and a[2][1] == d and a[2][2] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[0][2] == d and a[1][2] == d and a[2][2] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[1][0] == d and a[1][1] == d and a[1][2] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[0][1] == d and a[1][1] == d and a[2][1] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[0][0] == d and a[1][1] == d and a[2][2] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             elif a[2][0] == d and a[1][1] == d and a[0][2] == d:
                 flag = False
                 winStatus = True
-                win('O',0)
+                win('O', 0)
                 break
 
             else:
