@@ -1,5 +1,16 @@
+
+# ROCK PAPER SCISSOR GAME
+
+def checkisdigit(v):
+    if v.isdigit():
+        return int(v)
+    else:
+        print(' INVALID ENTRY ')
+        exit(0)
+
 print(' ROCK PAPER SCISSOR GAME ')
-a = int(input(' ENTER 1 TO START THE GAME \n ENTER 0 TO EXIT THE GAME \n'))
+a = input(' ENTER 1 TO START THE GAME \n ENTER 0 TO EXIT THE GAME \n')
+a = checkisdigit(a)
 flag = 0
 if a == 1:
     flag = True
@@ -19,7 +30,6 @@ while flag:
     y.lower()
 
     if x == 'r' or x == 'p' or x == 's' or y == 'r' or y == 'p' or y == 's':
-
 
         if x == 'r':
             if y == 's':
